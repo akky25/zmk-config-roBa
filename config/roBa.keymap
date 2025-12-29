@@ -83,7 +83,7 @@
 &kp Q             &kp W         &kp E     &kp R      &kp T                                                     &kp Y                   &kp U  &lt 5 I              &kp O              &kp P
 &mt LCTRL A       &kp S         &kp D     &kp F      &kp G        &kp LS(LG(S))               &kp MINUS        &kp H                   &kp J  &kp K                &kp L              &kp ENTER
 &mt LEFT_SHIFT Z  &kp X         &kp C     &kp V      &kp B        &kp COLON                   &kp SEMICOLON    &kp N                   &kp M  &mt RIGHT_WIN COMMA  &mt RIGHT_ALT DOT  &mt RIGHT_SHIFT SLASH
-&kp LEFT_ALT      &kp LEFT_WIN  &kp CAPS  &lt 6 TAB  &lt 7 SPACE  &lt_to_layer_0 4 LANG2      &lt 4 BACKSPACE  &lt_to_layer_0 1 LANG1                                                 &kp GLOBE
+&kp LEFT_ALT      &kp LEFT_WIN  &kp CAPS  &lt 6 TAB  &lt 2 SPACE  &lt_to_layer_0 4 LANG2      &lt 3 BACKSPACE  &lt_to_layer_0 1 LANG1                                                 &kp GLOBE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -91,10 +91,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
@@ -142,6 +142,15 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        BK_FUNCTION {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
             >;
         };
 

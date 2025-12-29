@@ -1,4 +1,6 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
+#include <behaviors/input_gestures_accel.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -14,11 +16,23 @@
             ;
 };
 
+/* Pointer acceleration config: input-listener より前に置く */
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;   /* トラックボールなので REL */
+    track-remainders;              /* 微小移動の精度UP */
+    min-factor = <900>;            /* 0.9x：低速は精密寄り */
+    max-factor = <3200>;           /* 3.2x：高速時だけ速く */
+    speed-threshold = <1200>;      /* 加速し始める速度 */
+    speed-max = <6000>;            /* ここで最大加速 */
+    acceleration-exponent = <2>;   /* 2=二次カーブ */
+};
+
 / {
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        input-processors = <&pointer_accel>;
     };
 };
 

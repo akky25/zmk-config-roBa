@@ -57,6 +57,7 @@
         mb2 {
             bindings = <&mkp MB2>;
             key-positions = <18 19>;
+            layers = <4>;
         };
     };
 

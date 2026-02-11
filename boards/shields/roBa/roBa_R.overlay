@@ -20,10 +20,10 @@
 &pointer_accel {
     input-type = <INPUT_EV_REL>;   /* トラックボールなので REL */
     track-remainders;              /* 微小移動の精度UP */
-    min-factor = <500>;            /* 0.5x：低速は精密寄り */
-    max-factor = <5000>;           /* 5.0x：高速時に大きく動く */
-    speed-threshold = <500>;      /* 加速し始める速度（早めに加速開始） */
-    speed-max = <4000>;            /* より早く最大加速に到達 */
+    min-factor = <300>;            /* 0.5x：低速は精密寄り */
+    max-factor = <3000>;           /* 5.0x：高速時に大きく動く */
+    speed-threshold = <400>;      /* 加速し始める速度（早めに加速開始） */
+    speed-max = <1200>;            /* より早く最大加速に到達 */
     acceleration-exponent = <2>;   /* 2=二次カーブ */
 };
 

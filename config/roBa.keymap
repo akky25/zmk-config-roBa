@@ -91,7 +91,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "H_DELETE";
             #binding-cells = <0>;
-            bindings = <&kp H>, <&kp DELETE>;
+            bindings = <&kp H>, <&kp BACKSPACE>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
     };

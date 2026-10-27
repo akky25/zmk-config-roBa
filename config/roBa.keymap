@@ -11,7 +11,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    // オートマウスは roBa_R.overlay の zip_temp_layer で行う
     scroll-layers = <5>;
 
     // arrows {
@@ -115,6 +115,25 @@
             keep-mods = <(MOD_LGUI)>;
         };
 
+        // マウスレイヤー: Cmd 押下中は F / L を文字として送る（Cmd+F / Cmd+L 用）
+        mb1_or_f: mb1_or_f {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1>, <&kp F>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        mb3_or_l: mb3_or_l {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&mkp MB3>, <&kp L>;
+
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
         // &lt 2 SPACE と同じ判定で、長押しは num_hold
         lt_num: lt_num {
             compatible = "zmk,behavior-hold-tap";
@@ -172,7 +191,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans    &trans                      &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &mkp MB1  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB3  &trans
+&trans  &trans  &trans  &mb1_or_f  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mb3_or_l  &trans
 &trans  &trans  &trans  &trans    &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB4  &trans
 &trans  &trans  &trans  &trans    &trans  &trans      &trans  &trans                              &trans
             >;

@@ -27,12 +27,18 @@
     acceleration-exponent = <2>;   /* 2=二次カーブ */
 };
 
+/* オートマウス: 動かすとレイヤー4を2秒有効。excluded-positions 以外のキーを押すと即解除 */
+&zip_temp_layer {
+    require-prior-idle-ms = <300>;   /* 打鍵から0.3秒は有効にしない */
+    excluded-positions = <13 18 19 20 30 31 32 10 22 33 34 35 36 37>;  /* クリック・右クリックコンボ・修飾キー */
+};
+
 / {
     trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&pointer_accel>;
+        input-processors = <&pointer_accel &zip_temp_layer 4 2000>;
     };
 };
 
